@@ -4,6 +4,7 @@ import encryption.EncryptUtils;
 
 import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -13,7 +14,8 @@ public class Block {
 
 	public String hash;			// the hash value of current block
 	public String prevHash;
-	public String content;
+//	public String content;
+	public List<Transaction> content;
 	public long timeStamp;
 	public int nonce;	// a random nonce used in POW
 
@@ -22,7 +24,7 @@ public class Block {
 	 * @param content the content to be inserted into current block
 	 * @param prevHash the hash value of the previous block
 	 */
-	public Block(String content, String prevHash) {
+	public Block(List<Transaction> content, String prevHash) {
 		this.content = content;
 		this.prevHash = prevHash;
 		timeStamp = new Date().getTime();

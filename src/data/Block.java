@@ -14,7 +14,6 @@ public class Block {
 
 	public String hash;			// the hash value of current block
 	public String prevHash;
-//	public String content;
 	public List<Transaction> content;
 	public long timeStamp;
 	public int nonce;	// a random nonce used in POW
@@ -39,7 +38,7 @@ public class Block {
 	public String calcCurrentHash() {
 		try {
 			return EncryptUtils.mySHA256(String.valueOf(timeStamp)
-										+ content
+										+ content.hashCode()
 										+ prevHash
 										+ nonce);
 		} catch (Exception e) {

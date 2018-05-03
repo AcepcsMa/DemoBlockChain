@@ -10,6 +10,13 @@ public class Transaction {
 	private String timestamp;
 	private double amount;
 
+	public Transaction(String sender, String receiver, double amount) {
+		this.sender = sender;
+		this.receiver = receiver;
+		this.amount = amount;
+		this.timestamp = String.valueOf(System.currentTimeMillis());
+	}
+
 	public String getSender() {
 		return sender;
 	}
